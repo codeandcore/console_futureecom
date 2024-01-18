@@ -1,0 +1,7 @@
+.v-card {
+  transition: border ease-out 500ms;
+
+  &.v-card__active {
+    border-color: var(--v-primary-base);
+  }
+}

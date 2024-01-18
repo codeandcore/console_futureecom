@@ -1,0 +1,26 @@
+version: "3.6"
+
+services:
+  console:
+    image: node:14
+    command: sh -c "rm -rf .nuxt dist && yarn install && yarn serve"
+    networks:
+      - frontend
+    volumes:
+      - .:/usr/app/
+    working_dir: /usr/app/
+    environment:     
+      VUE_APP_API_BASEURL: https://qualifiedh.api.us-01.futureecom.app
+      VUE_APP_STORE_ID: 1
+      VUE_APP_ORGANISATION_ID: 1
+      VUE_APP_CLIENT_ID: 3d68cbf6-1bec-43b3-8918-167554e344f8
+      VUE_APP_TOKEN_STRATEGY: localStorage
+      NPM_TOKEN: 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
+    ports:
+      - 3000:8080 
+
+networks:
+  frontend:
+    external:
+      name: frontend
+ 

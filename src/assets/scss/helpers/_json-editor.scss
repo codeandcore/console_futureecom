@@ -1,0 +1,8 @@
+.json-editor {
+  --jse-theme-color: var(--v-primary-base);
+
+  .jse-contents {
+    max-height: 400px;
+    overflow: scroll;
+  }
+}
