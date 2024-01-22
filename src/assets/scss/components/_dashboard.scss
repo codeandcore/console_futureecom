@@ -1,0 +1,29 @@
+.card_box{
+    .mail_title{
+        margin-bottom: 20px;
+        min-height: 90px;
+        span{
+            padding-left: 9px;
+            line-height: normal;
+            word-break: auto-phrase;
+        }
+    }
+}
+.main_heading{
+    strong{
+        color: #5A459C;
+    }
+}
+.inner_container{
+    max-width: 1320px;
+}
+.price_text{
+    font-size: 24px;
+}
+
+.tab_heading{
+    .v-tab{
+        color:#333333 !important;
+        text-transform: capitalize;
+    }
+}

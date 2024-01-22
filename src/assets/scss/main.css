@@ -6,24 +6,10 @@
   font-weight: bold;
 }
 
-.text-white {
-  color: #FFFFFF !important;
-}
-
-.text-white.v-icon {
-  color: #FFFFFF !important;
-}
-
 .v-expansion-panel-header .v-expansion-panel-header__icon .v-icon {
   color: #FFFFFF !important;
 }
 
-.v-navigation-drawer .text-body-2 {
-  display: none;
-}
-.v-navigation-drawer .v-input--hide-details {
-  display: none;
-}
 .v-navigation-drawer .scrollable-height {
   overflow-x: hidden;
 }
@@ -37,6 +23,26 @@
 
 body .v-expansion-panel-header {
   padding: 15px 15px;
+  transition: 0.5s all ease;
+  -webkit-transition: 0.5s all ease;
+  -moz-transition: 0.5s all ease;
+  -o-transition: 0.5s all ease;
+}
+body .v-expansion-panel-header:hover {
+  background-color: #252559 !important;
+}
+body .navigation-menu .v-list-item {
+  min-height: 35px;
+}
+body .navigation-menu .v-expansion-panel-content .v-expansion-panel {
+  background-color: transparent;
+  color: #FFFFFF;
+}
+body .navigation-menu .v-expansion-panel-content .v-expansion-panel .v-list-item {
+  color: #FFFFFF;
+}
+body .navigation-menu .v-expansion-panel-content .v-expansion-panel-header {
+  padding: 0;
 }
 
 header .v-toolbar__content, header .v-toolbar__extension {
@@ -54,6 +60,13 @@ header .v-toolbar__content, header .v-toolbar__extension {
 }
 .store_select .v-icon {
   color: #FFFFFF !important;
+}
+
+.v-navigation-drawer--mini-variant .text-body-2 {
+  display: none;
+}
+.v-navigation-drawer--mini-variant .v-input--hide-details {
+  display: none;
 }
 
 header .v-toolbar__content {
@@ -215,4 +228,51 @@ input[type=number]::-webkit-outer-spin-button {
 
 .uppercase-first-letter::first-letter {
   text-transform: uppercase;
+}
+
+.text-white {
+  color: #FFFFFF !important;
+}
+
+.text-white.v-icon {
+  color: #FFFFFF !important;
+}
+
+.text-gray {
+  color: #333333 !important;
+}
+
+.text-light-gray {
+  color: #555555 !important;
+}
+
+.bg_primary {
+  background-color: #434371 !important;
+}
+
+.card_box .mail_title {
+  margin-bottom: 20px;
+  min-height: 90px;
+}
+.card_box .mail_title span {
+  padding-left: 9px;
+  line-height: normal;
+  word-break: auto-phrase;
+}
+
+.main_heading strong {
+  color: #5A459C;
+}
+
+.inner_container {
+  max-width: 1320px;
+}
+
+.price_text {
+  font-size: 24px;
+}
+
+.tab_heading .v-tab {
+  color: #333333 !important;
+  text-transform: capitalize;
 }

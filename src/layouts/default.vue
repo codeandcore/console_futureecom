@@ -2,9 +2,9 @@
   <div>
     <v-app-bar color="primary" fixed dark app clipped-left clipped-right flat>
       <span>
-        <v-app-bar-nav-icon class="me-4"  />
+        <v-app-bar-nav-icon class="me-4"  @click="mini = !mini"/>
         <v-btn
-          v-if="$vuetify.breakpoint.smAndUp" @click.stop="toggleDrawer"
+          v-if="$vuetify.breakpoint.smAndUp" 
           :to="{ name: 'dashboard', params: { ...$route.params } }"
           color="transparent"
           depressed
@@ -20,7 +20,9 @@
       </span>
     </v-app-bar>
 
-    <v-navigation-drawer v-model="drawer" :width="drawerWidth" @mouseover="drawer = true" @mouseleave="drawer = false"  app :permanent="$vuetify.breakpoint.mdAndUp" clipped class="primary" :key="navDrawerPinned" :expand-on-hover="!navDrawerPinned"  rail>
+    <v-navigation-drawer  app :permanent="$vuetify.breakpoint.mdAndUp" clipped class="primary"  v-model="drawer"  :mini-variant="mini"
+        >
+        <!-- :expand-on-hover="mini" -->
       <scrollable class="primary">
         <template #scrollable>
           <navigation-menu v-if="!loading.tos && !loading.account" :key="routeKey" />          
@@ -32,7 +34,7 @@
 
     <portal-target name="side-drawer" multiple />
 
-    <v-main>
+    <v-main app>
       <v-slide-x-reverse-transition mode="out-in">
         <div v-if="!isReady" class="d-flex justify-center my-4">
           <v-progress-circular size="32" color="primary" indeterminate />
@@ -185,7 +187,7 @@ export default defineComponent({
     const toBeWatchedForInitialization = [currentStore, () => route.params.store, () => route.params.organisation]
 
     watch(toBeWatchedForInitialization, () => init(), { immediate: true })
-
+    
     return {
       isReady,
       routeKey,
@@ -195,20 +197,15 @@ export default defineComponent({
       loading,
       store: currentStore,
       onAccept
-    }
+    }    
   },
 
-  data() {
-    return {
-      drawer: false, // Controls the visibility of the drawer
-      drawerWidth: 300, // Initial width of the drawer
-    };
-  },
-  methods: {
-    toggleDrawer() {
-      this.drawer = !this.drawer;
-      this.drawerWidth = this.drawer ? 300 : 0; // Adjust the width as needed
-    },
-  },
+  data(){
+    return{
+      drawer: true,
+      mini: true,
+    }
+  }
+
 })
 </script>

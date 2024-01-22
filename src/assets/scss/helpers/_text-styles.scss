@@ -1,3 +1,24 @@
 .uppercase-first-letter::first-letter {
   text-transform: uppercase;
 }
+
+
+// new css
+.text-white{
+  color: #FFFFFF !important;
+}
+.text-white{
+  &.v-icon{
+    color: #FFFFFF !important;  
+  }
+}
+
+.text-gray{
+ color: #333333 !important; 
+}
+.text-light-gray{
+  color: #555555 !important; 
+ }
+ .bg_primary{
+  background-color: #434371 !important;
+ }
